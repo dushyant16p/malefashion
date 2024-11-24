@@ -94,13 +94,26 @@
         .login-box p a:hover {
             text-decoration: underline;
         }
+
+        /* Message Styles */
+        .message {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        .message.success {
+            color: green;
+        }
+        .message.error {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-box">
             <h2>Log In</h2>
-            <form action="submit_login.php" method="POST">
+            <form id="login-form">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -109,10 +122,14 @@
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" placeholder="Enter your password" required>
                 </div>
-                <button type="submit" class="login-btn" onclick="location.href='index.html';">Log In</button>
+                <button type="submit" class="login-btn">Log In</button>
             </form>
             <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <!-- Message Area -->
+            <div id="login-message" class="message"></div>
         </div>
     </div>
+
+    <script src="login.js"></script>
 </body>
 </html>
