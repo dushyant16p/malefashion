@@ -94,13 +94,26 @@
         .signup-box p a:hover {
             text-decoration: underline;
         }
+
+        /* Message Styles */
+        .message {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        .message.success {
+            color: green;
+        }
+        .message.error {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <div class="signup-container">
         <div class="signup-box">
             <h2>Create an Account</h2>
-            <form action="submit_signup.php" method="POST">
+            <form id="signup-form">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -117,10 +130,14 @@
                     <label for="confirm-password">Confirm Password</label>
                     <input type="password" id="confirm-password" name="confirm_password" placeholder="Confirm your password" required>
                 </div>
-                <button type="submit" class="signup-btn"  onclick="location.href='index.html';">Sign Up</button>
+                <button type="submit" class="signup-btn">Sign Up</button>
             </form>
             <p>Already have an account? <a href="login.html">Log In</a></p>
+            <!-- Message Area -->
+            <div id="signup-message" class="message"></div>
         </div>
     </div>
+
+    <script src="signup.js"></script>
 </body>
 </html>
